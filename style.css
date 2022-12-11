@@ -68,3 +68,7 @@ header {
 footer {
   height: 5rem;
 }
+
+#revision {
+  opacity: 0.5;
+}
