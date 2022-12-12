@@ -27,6 +27,7 @@
         out-dir (fs/file "static")]
     (fs/delete-tree out-dir)
     (fs/create-dir out-dir)
+    (println "Building" (subs revision 0 8) "@" timestamp)
     (spit (fs/file out-dir "index.html")
           (-> (slurp "index.html")
               (str/replace-first "<span id=\"revision\"><code>rev:abcdef12</code></span>"
