@@ -3,6 +3,9 @@
    [clojure.string :as str]
    [babashka.fs :as fs]
    [babashka.process :refer [shell]]
+   [bb.pages.exhibitions :as exhibitions]
+   [bb.pages.portfolio :as portfolio]
+   [bb.pages.publications :as publications]
    [hiccup.element :as he]
    [hiccup.page :as hp])
   (:import java.time.format.DateTimeFormatter
@@ -61,7 +64,17 @@
   (let [out-dir (fs/file "static")]
     (fs/delete-tree out-dir)
     (fs/create-dir out-dir)
+    (println "Generating index.html from"
+             (subs (git-revision) 0 8)
+             "at"
+             (timestamp-iso8601))
     (spit (fs/file out-dir "index.html")
-          (layout {:title "dgtized"} (main "")))
+          (layout {:title "dgtized"}
+                  (main [:article
+                         (portfolio/section)
+                         (exhibitions/section)
+                         (publications/section)])))
     (fs/copy (fs/file "style.css") (fs/file out-dir "style.css")
              {:replace-existing true})))
+
+(comment (build))
