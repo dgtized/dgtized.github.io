@@ -25,14 +25,14 @@
 
 (defn footer []
   [:footer
-   [:span "© 2022-2024 Charles L.G. Comstock"]
+   [:span "© 2022-2024 Charles L.G. Comstock "]
    [:span
     (for [[link href] [["email" "mailto:dgtized@gmail.com"]
                        ["github" "https://github.com/dgtized"]
                        ["twitter" "https://twitter.com/dgtized"]
                        ["instagram" "https://instagram.com/dgtized"]
                        ["flickr" "https://flickr.com/dgtized"]]]
-      (he/link-to href (str "(" link ")")))]
+      [:span (he/link-to href (str "(" link ")")) " "])]
    (revision (timestamp-iso8601) (git-revision))])
 
 (defn layout [{:keys [title]} body]
