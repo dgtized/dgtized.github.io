@@ -33,7 +33,11 @@
 
 (defn layout [{:keys [title]} body]
   (hp/html5
+   {:xml? true}
    [:head
+    [:meta {:charset "UTF-8"}]
+    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+    [:meta {:http-equiv "X-UA-Compatible" :content "ie=edge"}]
     [:title title]
     (hp/include-css "style.css")]
    [:body
