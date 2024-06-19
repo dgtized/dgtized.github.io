@@ -6,6 +6,7 @@
 
 (def art-exploration
   [{:title [:span (he/link-to "https://dgtized.github.io/shimmers" "Shimmers")
+            " "
             (he/link-to "https://github.com/dgtized/shimmers" "(code)")]
     :desc "A digital sketchbook of generative art"}
    {:title [:span (he/link-to "https://dgtized.github.io/lemniscate" "Lemniscate")
@@ -13,6 +14,7 @@
             ]
     :desc "A simple language, editor, compiler, and firmware for visualizing and live programming an LED sculpture"}
    {:title [:span (he/link-to "https://dgtized.github.io/autostereogram" "Autostereogram")
+            " "
             (he/link-to "https://github.com/dgtized/autostereogram" "(code)")]
     :desc [:span
            "Generate "
@@ -23,12 +25,14 @@
    {:title (he/link-to "https://github.com/joneshf/forth-to-forth" "Forth to Forth")
     :desc "An effort to learn both Go and Forth by writing parts of a Forth interpreter in Go"}
    {:title [:span (he/link-to "https://dgtized.github.io/sierpinski-sieve" "Sierpinski Sieve")
+            " "
             (he/link-to "https://github.com/dgtized/sierpinski-sieve" "(code)")]
     :desc "Visualize Sierpinsky triangles"}
    {:title [:span (he/link-to "https://dgtized.github.io/tile-game" "NxN Tile-game Solver")
+            " "
             (he/link-to "https://github.com/dgtized/tile-game" "(code)")]
-    :desc [:span "A"
-           (he/link-to "https://en.wikipedia.org/wiki/Sliding_puzzle" "Sliding Puzzle")
+    :desc [:span "A "
+           (he/link-to "https://en.wikipedia.org/wiki/Sliding_puzzle" "sliding puzzle")
            " game with a partial solver"]}])
 
 (def tooling
@@ -72,7 +76,7 @@
    [:h3 category]
    [:ul
     (for [{:keys [title desc]} projects]
-      [:li title "-" desc])]])
+      [:li title " - " desc])]])
 
 (defn section []
   [:section

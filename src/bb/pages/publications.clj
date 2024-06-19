@@ -19,4 +19,4 @@
    [:h2 "Publications"]
    [:ul
     (for [{:keys [authors title place]} publications]
-      [:li authors [:em title] ";" place])]])
+      [:li authors " " [:em title] "; " place])]])

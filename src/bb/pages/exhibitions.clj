@@ -33,7 +33,7 @@
    [:ul
     (for [{:keys [project description exhibitions]} projects]
       [:li
-       [:span project "-" description]
+       [:span project " - " description]
        [:ul
         (for [{:keys [event place date]} exhibitions]
-          [:li event "-" [:em place] " " date])]])]])
+          [:li event " - " [:em place] " " date])]])]])
