@@ -74,7 +74,7 @@
                          (portfolio/section)
                          (exhibitions/section)
                          (publications/section)])))
-    (fs/copy (fs/file "style.css") (fs/file out-dir "style.css")
+    (fs/copy (fs/file "resources/public/style.css") (fs/file out-dir "style.css")
              {:replace-existing true})))
 
 (comment (build))
