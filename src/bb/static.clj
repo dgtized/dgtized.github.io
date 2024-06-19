@@ -1,6 +1,7 @@
 (ns bb.static
   (:require
    [clojure.string :as str]
+   [babashka.fs :as fs]
    [babashka.process :refer [shell]]
    [hiccup.element :as he]
    [hiccup.page :as hp])
@@ -56,3 +57,11 @@
 (comment (layout {:title "test"}
                  (main "body")))
 
+(defn build []
+  (let [out-dir (fs/file "static")]
+    (fs/delete-tree out-dir)
+    (fs/create-dir out-dir)
+    (spit (fs/file out-dir "index.html")
+          (layout {:title "dgtized"} (main "")))
+    (fs/copy (fs/file "style.css") (fs/file out-dir "style.css")
+             {:replace-existing true})))
