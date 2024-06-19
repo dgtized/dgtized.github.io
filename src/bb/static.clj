@@ -40,9 +40,19 @@
     [:meta {:http-equiv "X-UA-Compatible" :content "ie=edge"}]
     [:title title]
     (hp/include-css "style.css")]
-   [:body
-    body
-    (footer)]))
+   [:body body]))
 
-(comment (layout {:title "test"} "body"))
+(defn header []
+  [:header
+   [:h1 {:class "center signature"} "Charles Comstock"]
+   [:p {:class "center tagline"} "Software Developer & Maker"]])
+
+(defn main [body]
+  [:main
+   (header)
+   body
+   (footer)])
+
+(comment (layout {:title "test"}
+                 (main "body")))
 
