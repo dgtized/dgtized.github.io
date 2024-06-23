@@ -1,23 +1,12 @@
 (ns bb.static
   (:require
-   [clojure.string :as str]
    [babashka.fs :as fs]
-   [babashka.process :refer [shell]]
+   [bb.revision :as rev]
    [bb.pages.exhibitions :as exhibitions]
    [bb.pages.portfolio :as portfolio]
    [bb.pages.publications :as publications]
    [hiccup.element :as he]
-   [hiccup.page :as hp])
-  (:import java.time.format.DateTimeFormatter
-           java.time.Instant))
-
-(defn timestamp-iso8601 []
-  (let [fmt (DateTimeFormatter/ofPattern "yyyy-MM-dd'T'HH:mm:ss'Z'")]
-    (.format fmt (.atZone (Instant/now) (java.time.ZoneId/of "Z")))))
-
-(defn git-revision []
-  (-> (shell {:out :string} "git rev-parse HEAD")
-      :out str/trim))
+   [hiccup.page :as hp]))
 
 (defn revision [timestamp sha]
   [:span {:id "reversion" :title timestamp}
@@ -33,7 +22,7 @@
                        ["instagram" "https://instagram.com/dgtized"]
                        ["flickr" "https://flickr.com/dgtized"]]]
       [:span (he/link-to href (str "(" link ")")) " "])]
-   (revision (timestamp-iso8601) (git-revision))])
+   (revision (rev/timestamp-iso8601) (rev/git-revision))])
 
 (defn layout [{:keys [title]} body]
   (hp/html5
@@ -65,9 +54,9 @@
     (fs/delete-tree out-dir)
     (fs/create-dir out-dir)
     (println "Generating index.html from"
-             (subs (git-revision) 0 8)
+             (subs (rev/git-revision) 0 8)
              "at"
-             (timestamp-iso8601))
+             (rev/timestamp-iso8601))
     (spit (fs/file out-dir "index.html")
           (layout {:title "dgtized"}
                   (main [:article
