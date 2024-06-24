@@ -4,6 +4,7 @@
 (def projects
   [{:project "\"Recursive Reveries\""
     :description "A tree of six recycled monitors displaying generative animations"
+    :image "photos/recursive-reveries1-600x900.jpeg"
     :exhibitions
     [{:event (he/link-to "https://www.digitalephemera.art/" "Digital Ephemera")
       :place "St. Louis, MO"
@@ -11,6 +12,7 @@
    {:project (he/link-to "https://dgtized.github.io/lemniscate"
                          "\"Lemniscate\"")
     :description "An interactive, programmable LED sculpture"
+    :image "photos/strange-loop-sculpture.png"
     :exhibitions
     [{:event (he/link-to "https://www.thestrangeloop.com/"
                          "Strange Loop 2022")
@@ -31,9 +33,9 @@
   [:section
    [:h2 "Exhibitions"]
    [:ul
-    (for [{:keys [project description exhibitions]} projects]
+    (for [{:keys [project description exhibitions image]} projects]
       [:li
-       [:span project " - " description]
+       [:span project " " (he/link-to image "(photo)") " - " description]
        [:ul
         (for [{:keys [event place date]} exhibitions]
           [:li event " - " [:em place] " " date])]])]])
