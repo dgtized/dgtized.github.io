@@ -16,8 +16,8 @@
         (layout/layout {:title title}
                        (layout/main body))))
 
-(defn build []
-  (let [out-dir (fs/file "static")]
+(defn build [dir]
+  (let [out-dir (fs/file dir)]
     (fs/delete-tree out-dir)
     (fs/create-dir out-dir)
     (page {:file (fs/file out-dir "index.html")
@@ -29,4 +29,4 @@
     (fs/copy (fs/file "resources/public/style.css") (fs/file out-dir "style.css")
              {:replace-existing true})))
 
-(comment (build))
+(comment (build "static"))
