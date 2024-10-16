@@ -2,7 +2,12 @@
   (:require [hiccup.element :as he]))
 
 (def projects
-  [{:project "\"Recursive Reveries\""
+  [{:project "\"Sounds of the Nine Realms\""
+    :description "A tree canopy made from mechanical linkages with an ensemble of synthesizers mounted to the branches. Each synth reacts to participants presence and allows them to to change the generative soundscape."
+    :exhibitions
+    [{:event (he/link-to "https://articastl.com" "Artica")
+      :date "October 5-6, 2024" :place "St. Louis, MO."}]}
+   {:project "\"Recursive Reveries\""
     :description "A tree of six recycled monitors displaying generative animations"
     :image "photos/recursive-reveries1-600x900.jpeg"
     :exhibitions
