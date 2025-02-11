@@ -40,7 +40,8 @@
    [:ul
     (for [{:keys [project description exhibitions image]} projects]
       [:li
-       [:span project " " (when image (he/link-to image "(photo)"))
+       [:span project " "
+        (when image (he/link-to image "(photo)"))
         " - " description]
        [:ul
         (for [{:keys [event place date]} exhibitions]
