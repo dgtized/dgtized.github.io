@@ -10,7 +10,7 @@
 
 (defn footer []
   [:footer
-   [:span "© 2022-2024 Charles L.G. Comstock "]
+   [:span "© 2022-2025 Charles L.G. Comstock "]
    [:span
     (for [[link href] [["email" "mailto:dgtized@gmail.com"]
                        ["github" "https://github.com/dgtized"]
