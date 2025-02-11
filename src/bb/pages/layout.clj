@@ -8,15 +8,18 @@
   [:span {:id "reversion" :title timestamp}
    [:code (str "rev:" (subs sha 0 8))]])
 
+(def footer-links
+  [{:link "email" :href "mailto:dgtized@gmail.com"}
+   {:link "github" :href "https://github.com/dgtized"}
+   {:link "twitter" :href "https://twitter.com/dgtized"}
+   {:link "instagram" :href "https://instagram.com/dgtized"}
+   {:link "flickr" :href "https://flickr.com/dgtized"}])
+
 (defn footer []
   [:footer
    [:span "© 2022-2025 Charles L.G. Comstock "]
    [:span
-    (for [[link href] [["email" "mailto:dgtized@gmail.com"]
-                       ["github" "https://github.com/dgtized"]
-                       ["twitter" "https://twitter.com/dgtized"]
-                       ["instagram" "https://instagram.com/dgtized"]
-                       ["flickr" "https://flickr.com/dgtized"]]]
+    (for [{:keys [link href]} footer-links]
       [:span (he/link-to href (str "(" link ")")) " "])]
    (revision (rev/timestamp-iso8601) (rev/git-revision))])
 
