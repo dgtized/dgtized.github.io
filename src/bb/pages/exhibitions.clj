@@ -2,7 +2,12 @@
   (:require [hiccup.element :as he]))
 
 (def projects
-  [{:project "\"Sounds of the Nine Realms\""
+  [{:project "\"Be Seeing You\""
+    :description "Animated eyes on LED panels that follow participants moving in the space in front of the display."
+    :exhibitions
+    [{:event (he/link-to "https://articastl.com" "Artica")
+      :date "October 4-5, 2025" :place "St. Louis, MO."}]}
+   {:project "\"Sounds of the Nine Realms\""
     :description "A tree canopy made from mechanical linkages with an ensemble of synthesizers mounted to the branches. Each synth reacts to participants presence and allows them to to change the generative soundscape."
     :exhibitions
     [{:event (he/link-to "https://articastl.com" "Artica")
