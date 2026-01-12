@@ -4,4 +4,4 @@
  {:requires ([bb.static :as static])
   build {:doc "Build"
          :task (let [[dir] *command-line-args*]
-                 (static/build dir))}}}
+                 (static/build (or dir "static")))}}}
