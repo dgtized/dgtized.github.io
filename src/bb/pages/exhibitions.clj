@@ -10,6 +10,7 @@
       :date "October 4-5, 2025" :place "St. Louis, MO."}]}
    {:project "\"Sounds of the Nine Realms\""
     :description "A tree canopy made from mechanical linkages with an ensemble of synthesizers mounted to the branches. Each synth reacts to participants presence and allows them to to change the generative soundscape."
+    :image "photos/songs-of-the-nine-realms-1-1024x768.jpg"
     :exhibitions
     [{:event (he/link-to "https://articastl.com" "Artica")
       :date "October 5-6, 2024" :place "St. Louis, MO."}]}

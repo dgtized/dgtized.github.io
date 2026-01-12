@@ -34,7 +34,8 @@
 
     (doseq [f ["recursive-reveries1-600x900.jpeg"
                "strange-loop-sculpture.png"
-               "be-seeing-you-hooded-1024x768.jpg"]]
+               "be-seeing-you-hooded-1024x768.jpg"
+               "songs-of-the-nine-realms-1-1024x768.jpg"]]
       (println (format "Copying %s to resources/public/photos" f))
       (fs/copy (fs/file "resources/public/photos" f)
                (fs/file photo-dir f)
