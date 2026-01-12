@@ -10,6 +10,7 @@
       :date "October 4-5, 2025" :place "St. Louis, MO."}]}
    {:project "\"Sounds of the Nine Realms\""
     :description "A tree canopy made from mechanical linkages with an ensemble of synthesizers mounted to the branches. Each synth reacts to participants presence and allows them to to change the generative soundscape."
+    :video "video/songs-of-the-nine-realms-inside-garage.mp4"
     :image "photos/songs-of-the-nine-realms-1-1024x768.jpg"
     :exhibitions
     [{:event (he/link-to "https://articastl.com" "Artica")
@@ -45,10 +46,12 @@
   [:section
    [:h2 "Exhibitions"]
    [:ul
-    (for [{:keys [project description exhibitions image]} projects]
+    (for [{:keys [project description exhibitions image video]} projects]
       [:li
        [:span project " "
         (when image (he/link-to image "(photo)"))
+        " "
+        (when video (he/link-to video "(video)"))
         " - " description]
        [:ul
         (for [{:keys [event place date]} exhibitions]

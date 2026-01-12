@@ -18,10 +18,12 @@
 
 (defn build [dir]
   (let [out-dir (fs/file dir)
-        photo-dir (str out-dir "/photos")]
+        photo-dir (str out-dir "/photos")
+        video-dir (str out-dir "/video")]
     (fs/delete-tree out-dir)
     (fs/create-dir out-dir)
     (fs/create-dir photo-dir)
+    (fs/create-dir video-dir)
     (page {:file (fs/file out-dir "index.html")
            :title "dgtized"
            :body [:article
@@ -39,6 +41,12 @@
       (println (format "Copying %s to resources/public/photos" f))
       (fs/copy (fs/file "resources/public/photos" f)
                (fs/file photo-dir f)
+               {:replace-existing true}))
+
+    (doseq [f ["songs-of-the-nine-realms-inside-garage.mp4"]]
+      (println (format "Copying %s to resources/public/video" f))
+      (fs/copy (fs/file "resources/public/video" f)
+               (fs/file video-dir f)
                {:replace-existing true}))))
 
 (comment (build "static"))
