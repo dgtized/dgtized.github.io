@@ -27,6 +27,11 @@
   (hp/html5
    {:xml? true}
    [:head
+    [:script {:async "async" :src "https://www.googletagmanager.com/gtag/js?id=G-12KQQ4MZM5"}]
+    [:script "window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-12KQQ4MZM5');"]
     [:meta {:charset "UTF-8"}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
     [:meta {:http-equiv "X-UA-Compatible" :content "ie=edge"}]
