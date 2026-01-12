@@ -80,7 +80,7 @@
 
 (defn section []
   [:section
-   [:h2 "Portfolio"]
+   [:h2 "Projects"]
    (group "Art & Exploration" art-exploration)
    (group "Developer Tooling" tooling)
    (group "Emacs Packages" emacs-packages)])

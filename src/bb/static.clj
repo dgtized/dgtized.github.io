@@ -25,8 +25,8 @@
     (page {:file (fs/file out-dir "index.html")
            :title "dgtized"
            :body [:article
-                  (portfolio/section)
                   (exhibitions/section)
+                  (portfolio/section)
                   (publications/section)]})
     (fs/copy (fs/file "resources/public/style.css")
              (fs/file out-dir "style.css")
