@@ -10,3 +10,13 @@ Personal webpage, using [babashka](https://babashka.org/) and
 ```
 bb build # generates pages in 'static' subdirectory
 ```
+
+# Photos
+
+Add photos to `resources/public/photos`, preferably resizing with 
+
+```
+magick $input -size 1024x768 resources/public/photos/$output
+```
+
+Note that only the images listed in `src/static.clj` are currently copying over.
