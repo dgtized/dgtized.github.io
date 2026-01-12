@@ -3,6 +3,7 @@
 
 (def projects
   [{:project "\"Be Seeing You\""
+    :image "photos/be-seeing-you-hooded-1024x768.jpg"
     :description "Animated eyes on LED panels that follow participants moving in the space in front of the display."
     :exhibitions
     [{:event (he/link-to "https://articastl.com" "Artica")

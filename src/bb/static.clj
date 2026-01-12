@@ -33,7 +33,9 @@
              {:replace-existing true})
 
     (doseq [f ["recursive-reveries1-600x900.jpeg"
-               "strange-loop-sculpture.png"]]
+               "strange-loop-sculpture.png"
+               "be-seeing-you-hooded-1024x768.jpg"]]
+      (println (format "Copying %s to resources/public/photos" f))
       (fs/copy (fs/file "resources/public/photos" f)
                (fs/file photo-dir f)
                {:replace-existing true}))))
