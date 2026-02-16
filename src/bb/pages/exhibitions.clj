@@ -7,7 +7,10 @@
     :description "Animated eyes on LED panels that follow participants moving in the space in front of the display."
     :exhibitions
     [{:event (he/link-to "https://articastl.com" "Artica")
-      :date "October 4-5, 2025" :place "St. Louis, MO."}]}
+      :date "October 4-5, 2025" :place "St. Louis, MO."}
+     {:event (he/link-to "https://stlmardigras.org/events/mayors-mardi-gras-ball"
+                         "Mayor's Mardi Gras Ball 2026")
+      :date "February 13th, 2026" :place "St. Louis, MO"}]}
    {:project "\"Sounds of the Nine Realms\""
     :description "A tree canopy made from mechanical linkages with an ensemble of synthesizers mounted to the branches. Each synth reacts to participants presence and allows them to to change the generative soundscape."
     :video "video/songs-of-the-nine-realms-inside-garage.mp4"
