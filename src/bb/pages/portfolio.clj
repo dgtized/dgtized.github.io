@@ -1,7 +1,7 @@
 (ns bb.pages.portfolio
   (:require [hiccup.element :as he]))
 
-(comment {:title (he/link-to "" "")
+(comment {:title [:span (he/link-to "project" "Project") " " (he/link-to "code" "Code")]
           :desc ""})
 
 (def art-exploration
