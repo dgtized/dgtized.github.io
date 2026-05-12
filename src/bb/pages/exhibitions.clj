@@ -1,14 +1,14 @@
 (ns bb.pages.exhibitions
   (:require [hiccup.element :as he]))
 
-(comment {:project "Project Name"
-          :image "photos/"
-          :description ""
-          :image "" ;; optional url
-          :video "" ;; optional url
-          :exhibitions [{:event (he/link-to "event-url" "Event Name")
-                         :date ""
-                         :place ""}]})
+(comment
+  {:project "Project Name"
+   :image "photos/" ;; optional url
+   :video "" ;; optional url
+   :description ""
+   :exhibitions [{:event (he/link-to "event-url" "Event Name")
+                  :date ""
+                  :place ""}]})
 
 (def projects
   [{:project "\"Be Seeing You\""
