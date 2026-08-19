@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: bb build static
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: 'static'
       - name: Deploy to GitHub Pages
