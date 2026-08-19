@@ -1,4 +1,4 @@
-{:deps {hiccup/hiccup {:mvn/version "2.0.0-RC3"}}
+{:deps {hiccup/hiccup {:mvn/version "2.0.0"}}
  :paths ["src"]
  :tasks
  {:requires ([bb.static :as static])
