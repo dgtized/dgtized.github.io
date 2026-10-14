@@ -50,7 +50,10 @@
     :desc "Analyze git history to report complexity of changes in each deploy"}
    {:title (he/link-to "https://github.com/dgtized/lein-vanity"
                        "lein-vanity")
-    :desc "lines of code for vanity's sake"}])
+    :desc "lines of code for vanity's sake"}
+   {:title (he/link-to "https://github.com/dgtized/carrier"
+                       "Carrier")
+    :desc "Resusable Babashka scripts for publishing Figwheel based Clojurescript projects to Github Pages."}])
 
 (def emacs-packages
   [{:title (he/link-to "https://github.com/dgtized/winnow.el"
