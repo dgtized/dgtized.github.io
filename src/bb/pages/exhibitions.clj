@@ -11,7 +11,12 @@
                   :place ""}]})
 
 (def projects
-  [{:project "\"Be Seeing You\""
+  [{:project "\"Scanner Persistence Error\""
+    :description "Stationary LED column that creates persistence of vision images and words when an observer moves their eyes or head from side to side."
+    :exhibitions
+    [{:event (he/link-to "https://articastl.com" "Artica")
+      :date "October 3-4, 2026" :place "St. Louis, MO"}]}
+   {:project "\"Be Seeing You\""
     :image "photos/be-seeing-you-hooded-1024x768.jpg"
     :description "Animated eyes on LED panels that follow participants moving in the space in front of the display."
     :exhibitions
